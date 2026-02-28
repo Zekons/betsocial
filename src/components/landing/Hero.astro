@@ -9,10 +9,11 @@
   <div class="absolute top-1/2 right-0 w-[600px] h-[600px] gradient-radial-accent opacity-30"></div>
 
   <div class="relative mx-auto max-w-7xl px-6">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+    <!-- Mobile: flex-col con order | Desktop: grid 2 cols -->
+    <div class="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-      <!-- Left: Copy -->
-      <div class="space-y-8">
+      <!-- Part 1: Badge + Headline (mobile: order-1, desktop: col 1 row 1) -->
+      <div class="order-1 space-y-6 lg:space-y-8">
         <!-- Live badge -->
         <div class="reveal stagger-1 inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/10 px-4 py-2">
           <span class="flex h-2 w-2 rounded-full bg-primary live-dot"></span>
@@ -22,50 +23,14 @@
         </div>
 
         <!-- Headline -->
-        <h1 class="reveal stagger-2 font-heading text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+        <h1 class="reveal stagger-2 font-heading text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
           Apuestas entre amigos.
           <span class="text-primary text-glow-primary">Sin complicaciones.</span>
         </h1>
-
-        <!-- Subheadline -->
-        <p class="reveal stagger-3 text-xl text-neutral-400 max-w-lg leading-relaxed">
-          Apuesta con tu grupo, el dinero queda guardado, y el ganador cobra automáticamente. Así de simple.
-        </p>
-
-        <!-- CTAs -->
-        <div class="reveal stagger-4 flex flex-col sm:flex-row gap-4">
-          <a
-            href="/app"
-            class="group flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-lg font-bold text-white transition-all hover:bg-primary-light hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5"
-          >
-            Invita a tu grupo
-            <span class="material-icons-round transition-transform group-hover:translate-x-1">arrow_forward</span>
-          </a>
-          <a
-            href="#como-funciona"
-            class="flex items-center justify-center gap-2 rounded-full border border-neutral-700 px-8 py-4 text-lg font-semibold text-neutral-300 transition-all hover:border-neutral-500 hover:text-neutral-100"
-          >
-            Ver cómo funciona
-          </a>
-        </div>
-
-        <!-- Social proof mini -->
-        <div class="reveal stagger-5 flex items-center gap-4 pt-4">
-          <!-- Stacked avatars -->
-          <div class="flex -space-x-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 border-2 border-bg-base flex items-center justify-center text-xs font-bold text-white">JP</div>
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-600 border-2 border-bg-base flex items-center justify-center text-xs font-bold text-white">MA</div>
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-600 border-2 border-bg-base flex items-center justify-center text-xs font-bold text-white">CL</div>
-            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 border-2 border-bg-base flex items-center justify-center text-xs font-bold text-white">+5k</div>
-          </div>
-          <p class="text-sm text-neutral-500">
-            Únete a <span class="text-neutral-300 font-medium">5,000+ grupos</span> apostando juntos
-          </p>
-        </div>
       </div>
 
-      <!-- Right: Phone Mockup -->
-      <div class="reveal-right relative flex justify-center lg:justify-end">
+      <!-- Phone Mockup (mobile: order-2, desktop: col 2 spans 2 rows) -->
+      <div class="order-2 lg:row-span-2 reveal-right relative flex justify-center lg:justify-end">
         <!-- Phone frame (sin animate-float) -->
         <div class="phone-frame w-[300px] md:w-[320px]">
           <div class="phone-screen aspect-[9/19] flex flex-col">
@@ -260,6 +225,41 @@
           </div>
         </div>
       </div>
+
+      <!-- Part 2: Subheadline + CTAs + Social (mobile: order-3, desktop: col 1 row 2) -->
+      <div class="order-3 space-y-8">
+        <!-- Subheadline -->
+        <p class="reveal stagger-3 text-lg md:text-xl text-neutral-400 max-w-lg">
+          El dinero se bloquea al aceptar. El ganador cobra automáticamente. Sin excusas, sin esperas.
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal stagger-4 flex flex-col sm:flex-row gap-4">
+          <a href="#" class="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 font-semibold text-bg-base transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/30">
+            <span class="material-icons-round text-xl">group_add</span>
+            Invita a tu grupo
+          </a>
+          <a href="#how-it-works" class="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-700 bg-transparent px-8 py-4 font-semibold text-neutral-200 transition-all hover:border-neutral-500 hover:bg-neutral-800/50">
+            Ver cómo funciona
+            <span class="material-icons-round text-lg">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="reveal stagger-5 flex items-center gap-4">
+          <div class="flex -space-x-3">
+            <div class="w-10 h-10 rounded-full border-2 border-bg-base bg-gradient-to-br from-rose-500 to-pink-600"></div>
+            <div class="w-10 h-10 rounded-full border-2 border-bg-base bg-gradient-to-br from-blue-500 to-purple-600"></div>
+            <div class="w-10 h-10 rounded-full border-2 border-bg-base bg-gradient-to-br from-green-500 to-teal-600"></div>
+            <div class="w-10 h-10 rounded-full border-2 border-bg-base bg-gradient-to-br from-amber-500 to-orange-600"></div>
+          </div>
+          <div>
+            <p class="text-sm font-medium text-neutral-200">+5,000 grupos activos</p>
+            <p class="text-xs text-neutral-500">Únete a la comunidad</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

@@ -33,15 +33,19 @@
         </div>
       </div>
 
-      <!-- Card 2: Pago instantáneo (2 de 6 cols) -->
+      <!-- Card 2: Pago instantáneo (2 de 6 cols) - PAR: icon derecha en mobile -->
       <div class="reveal-right stagger-1 lg:col-span-2 glass rounded-3xl p-6 border border-neutral-800">
-        <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center mb-4">
-          <span class="material-icons-round text-green-500 text-2xl">bolt</span>
+        <div class="flex flex-row-reverse lg:flex-col items-center lg:items-start gap-4 lg:gap-0">
+          <div class="w-12 h-12 rounded-xl bg-green-500/20 flex items-center justify-center flex-shrink-0 lg:mb-4">
+            <span class="material-icons-round text-green-500 text-2xl">bolt</span>
+          </div>
+          <div class="flex-1 lg:flex-none text-right lg:text-left">
+            <h3 class="font-heading text-xl font-semibold text-neutral-50 mb-1 lg:mb-2">Pago instantáneo</h3>
+            <p class="text-neutral-400 text-sm">
+              El ganador recibe el dinero automáticamente. Sin esperas, sin excusas.
+            </p>
+          </div>
         </div>
-        <h3 class="font-heading text-xl font-semibold text-neutral-50 mb-2">Pago instantáneo</h3>
-        <p class="text-neutral-400 text-sm">
-          El ganador recibe el dinero automáticamente. Sin esperas, sin excusas.
-        </p>
       </div>
 
       <!-- Card 3: Grupos privados (3 de 6 cols = 1.5 cols) -->
@@ -59,13 +63,13 @@
         </div>
       </div>
 
-      <!-- Card 4: Historial transparente (3 de 6 cols = 1.5 cols) -->
+      <!-- Card 4: Historial transparente (3 de 6 cols = 1.5 cols) - PAR: icon derecha en mobile -->
       <div class="reveal-right stagger-2 lg:col-span-3 glass rounded-3xl p-8 border border-neutral-800">
-        <div class="flex items-center gap-6">
+        <div class="flex flex-row-reverse lg:flex-row items-center gap-6">
           <div class="w-16 h-16 rounded-2xl bg-cyan-500/20 flex items-center justify-center flex-shrink-0">
             <span class="material-icons-round text-cyan-500 text-3xl">history</span>
           </div>
-          <div>
+          <div class="text-right lg:text-left">
             <h3 class="font-heading text-2xl font-semibold text-neutral-50 mb-2">Historial transparente</h3>
             <p class="text-neutral-400">
               Cada apuesta queda registrada. Ve tu racha, tus stats y tu historial completo.
@@ -74,37 +78,42 @@
         </div>
       </div>
 
-      <!-- Card 5: Sin intermediarios (2 de 6 cols) -->
+      <!-- Card 5: Sin intermediarios (2 de 6 cols) - IMPAR: icon izquierda en mobile -->
       <div class="reveal-left stagger-3 lg:col-span-2 glass rounded-3xl p-6 border border-neutral-800">
-        <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
-          <span class="material-icons-round text-purple-500 text-2xl">link_off</span>
+        <div class="flex flex-row lg:flex-col items-center lg:items-start gap-4 lg:gap-0">
+          <div class="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center flex-shrink-0 lg:mb-4">
+            <span class="material-icons-round text-purple-500 text-2xl">link_off</span>
+          </div>
+          <div class="flex-1 lg:flex-none">
+            <h3 class="font-heading text-xl font-semibold text-neutral-50 mb-1 lg:mb-2">Sin intermediarios</h3>
+            <p class="text-neutral-400 text-sm">
+              Tú y tus amigos. Sin casas de apuestas, sin comisiones ocultas.
+            </p>
+          </div>
         </div>
-        <h3 class="font-heading text-xl font-semibold text-neutral-50 mb-2">Sin intermediarios</h3>
-        <p class="text-neutral-400 text-sm">
-          Tú y tus amigos. Sin casas de apuestas, sin comisiones ocultas.
-        </p>
       </div>
 
-      <!-- Card 6: Powered by Stellar (4 de 6 cols) -->
+      <!-- Card 6: Powered by Stellar (4 de 6 cols) - PAR: icon derecha en mobile -->
       <div class="reveal-right stagger-3 lg:col-span-4 glass rounded-3xl p-8 border border-accent/20 bg-gradient-to-br from-accent/10 to-transparent">
-        <div class="flex flex-col md:flex-row md:items-center gap-6">
+        <div class="flex flex-row-reverse lg:flex-row items-center gap-6">
           <div class="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center flex-shrink-0">
             <img src="/stellar-logo-small.png" alt="Stellar" class="w-8 h-8 invert" />
           </div>
-          <div class="flex-1">
+          <div class="flex-1 text-right lg:text-left">
             <h3 class="font-heading text-2xl font-semibold text-neutral-50 mb-2">Powered by Stellar</h3>
             <p class="text-neutral-400">
               Transacciones en menos de 5 segundos. Fees menores a $0.01. La blockchain más eficiente para pagos.
             </p>
-          </div>
-          <div class="flex gap-4 text-center">
-            <div>
-              <p class="text-2xl font-bold text-accent">&lt;5s</p>
-              <p class="text-xs text-neutral-500">Confirmación</p>
-            </div>
-            <div>
-              <p class="text-2xl font-bold text-accent">&lt;$0.01</p>
-              <p class="text-xs text-neutral-500">Por transacción</p>
+            <!-- Stats inline en mobile -->
+            <div class="flex gap-4 mt-3 justify-end lg:justify-start">
+              <div class="text-center">
+                <p class="text-xl lg:text-2xl font-bold text-accent">&lt;5s</p>
+                <p class="text-xs text-neutral-500">Confirmación</p>
+              </div>
+              <div class="text-center">
+                <p class="text-xl lg:text-2xl font-bold text-accent">&lt;$0.01</p>
+                <p class="text-xs text-neutral-500">Por transacción</p>
+              </div>
             </div>
           </div>
         </div>

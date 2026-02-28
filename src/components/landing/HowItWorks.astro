@@ -3,10 +3,10 @@
 ---
 
 <section id="how-it-works" class="relative">
-  <!-- Contenedor que ocupa altura extra para el scroll -->
-  <div class="scroll-container h-[300vh]">
-    <!-- Sección sticky -->
-    <div class="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-4 relative">
+  <!-- Contenedor que ocupa altura extra para el scroll (solo desktop) -->
+  <div class="scroll-container h-auto lg:h-[300vh]">
+    <!-- Sección sticky solo en desktop -->
+    <div class="lg:sticky lg:top-0 lg:h-screen flex flex-col justify-center overflow-hidden py-8 lg:py-4 relative">
 
       <!-- Header -->
       <div class="text-center mb-4 px-8">
@@ -18,8 +18,8 @@
         </p>
       </div>
 
-      <!-- Track horizontal -->
-      <div class="horizontal-track flex gap-12 px-12 will-change-transform">
+      <!-- Track: vertical en mobile, horizontal en desktop -->
+      <div class="horizontal-track flex flex-col lg:flex-row gap-8 lg:gap-12 px-6 lg:px-12 items-center lg:items-start lg:will-change-transform">
 
         <!-- Step 1: Mis Grupos -->
         <div class="step-panel flex-shrink-0 w-96">
@@ -581,8 +581,8 @@
 
       </div>
 
-      <!-- Progress bar -->
-      <div class="absolute bottom-4 left-0 right-0 px-12 max-w-3xl mx-auto w-full">
+      <!-- Progress bar (solo desktop) -->
+      <div class="hidden lg:block absolute bottom-4 left-0 right-0 px-12 max-w-3xl mx-auto w-full">
         <div class="h-1 bg-neutral-800 rounded-full overflow-hidden">
           <div class="progress-bar h-full bg-gradient-to-r from-primary to-accent rounded-full w-0"></div>
         </div>
@@ -598,29 +598,30 @@
 
   gsap.registerPlugin(ScrollTrigger);
 
-  // Esperar a que el DOM esté listo
-  const track = document.querySelector('.horizontal-track');
-  const progressBar = document.querySelector('.progress-bar');
+  // Solo ejecutar en desktop (lg: 1024px+)
+  if (window.innerWidth >= 1024) {
+    const track = document.querySelector('.horizontal-track');
+    const progressBar = document.querySelector('.progress-bar');
 
-  if (track) {
-    const totalScroll = track.scrollWidth - window.innerWidth + 100;
-    console.log('GSAP loaded, total scroll:', totalScroll);
+    if (track) {
+      const totalScroll = track.scrollWidth - window.innerWidth + 100;
 
-    gsap.to(track, {
-      x: -totalScroll,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.scroll-container',
-        start: 'top top-=400',
-        end: 'bottom bottom+=400',
-        scrub: 1,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          if (progressBar) {
-            progressBar.style.width = (self.progress * 100) + '%';
+      gsap.to(track, {
+        x: -totalScroll,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scroll-container',
+          start: 'top top-=400',
+          end: 'bottom bottom+=400',
+          scrub: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            if (progressBar) {
+              progressBar.style.width = (self.progress * 100) + '%';
+            }
           }
         }
-      }
-    });
+      });
+    }
   }
 </script>

@@ -1,0 +1,48 @@
+---
+// Navbar minimalista - BetSocial
+---
+
+<nav class="fixed top-0 left-0 right-0 z-50 glass">
+  <div class="mx-auto max-w-7xl px-6 py-4">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-primary glow-primary">
+          <span class="material-icons-round text-white text-xl">casino</span>
+        </div>
+        <span class="font-heading text-xl font-bold text-neutral-50">
+          Bet<span class="text-primary">Social</span>
+        </span>
+      </a>
+
+      <!-- Nav Links (desktop) -->
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#como-funciona" class="text-sm font-medium text-neutral-400 hover:text-neutral-50 transition-colors">
+          Cómo funciona
+        </a>
+        <a href="#grupos" class="text-sm font-medium text-neutral-400 hover:text-neutral-50 transition-colors">
+          Grupos
+        </a>
+        <a href="#seguridad" class="text-sm font-medium text-neutral-400 hover:text-neutral-50 transition-colors">
+          Seguridad
+        </a>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-4">
+        <a
+          href="/app"
+          class="hidden sm:flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-primary-light hover:shadow-lg hover:shadow-primary/25"
+        >
+          Abrir App
+          <span class="material-icons-round text-lg">arrow_forward</span>
+        </a>
+
+        <!-- Mobile menu button -->
+        <button class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-bg-surface text-neutral-400">
+          <span class="material-icons-round">menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>

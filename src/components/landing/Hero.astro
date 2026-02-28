@@ -1,0 +1,442 @@
+---
+// Hero - BetSocial
+// Layout: Copy izquierda + Phone mockup derecha con chat conversacional animado
+---
+
+<section class="relative min-h-screen overflow-hidden pt-32 pb-20">
+  <!-- Background gradients -->
+  <div class="absolute inset-0 gradient-radial-primary opacity-50"></div>
+  <div class="absolute top-1/2 right-0 w-[600px] h-[600px] gradient-radial-accent opacity-30"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+      <!-- Left: Copy -->
+      <div class="space-y-8">
+        <!-- Live badge -->
+        <div class="reveal stagger-1 inline-flex items-center gap-3 rounded-full border border-primary/30 bg-primary/10 px-4 py-2">
+          <span class="flex h-2 w-2 rounded-full bg-primary live-dot"></span>
+          <span class="text-sm font-medium text-primary">
+            <span id="live-count" class="font-bold">2,847</span> apuestas activas ahora
+          </span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="reveal stagger-2 font-heading text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight">
+          Apuestas entre amigos.
+          <span class="text-primary text-glow-primary">Sin complicaciones.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="reveal stagger-3 text-xl text-neutral-400 max-w-lg leading-relaxed">
+          Apuesta con tu grupo, el dinero queda guardado, y el ganador cobra automáticamente. Así de simple.
+        </p>
+
+        <!-- CTAs -->
+        <div class="reveal stagger-4 flex flex-col sm:flex-row gap-4">
+          <a
+            href="/app"
+            class="group flex items-center justify-center gap-2 rounded-full bg-primary px-8 py-4 text-lg font-bold text-white transition-all hover:bg-primary-light hover:shadow-xl hover:shadow-primary/25 hover:-translate-y-0.5"
+          >
+            Invita a tu grupo
+            <span class="material-icons-round transition-transform group-hover:translate-x-1">arrow_forward</span>
+          </a>
+          <a
+            href="#como-funciona"
+            class="flex items-center justify-center gap-2 rounded-full border border-neutral-700 px-8 py-4 text-lg font-semibold text-neutral-300 transition-all hover:border-neutral-500 hover:text-neutral-100"
+          >
+            Ver cómo funciona
+          </a>
+        </div>
+
+        <!-- Social proof mini -->
+        <div class="reveal stagger-5 flex items-center gap-4 pt-4">
+          <!-- Stacked avatars -->
+          <div class="flex -space-x-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 border-2 border-bg-base flex items-center justify-center text-xs font-bold text-white">JP</div>
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-600 border-2 border-bg-base flex items-center justify-center text-xs font-bold text-white">MA</div>
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-600 border-2 border-bg-base flex items-center justify-center text-xs font-bold text-white">CL</div>
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-600 border-2 border-bg-base flex items-center justify-center text-xs font-bold text-white">+5k</div>
+          </div>
+          <p class="text-sm text-neutral-500">
+            Únete a <span class="text-neutral-300 font-medium">5,000+ grupos</span> apostando juntos
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Phone Mockup -->
+      <div class="reveal-right relative flex justify-center lg:justify-end">
+        <!-- Phone frame (sin animate-float) -->
+        <div class="phone-frame w-[300px] md:w-[320px]">
+          <div class="phone-screen aspect-[9/19] flex flex-col">
+            <!-- Notch -->
+            <div class="phone-notch"></div>
+
+            <!-- App header -->
+            <div class="flex items-center justify-between p-4 pt-12">
+              <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-xs font-bold text-white">CU</div>
+                <div>
+                  <p class="text-sm font-semibold text-neutral-100">Cabros de la U</p>
+                  <p class="text-xs text-neutral-500">6 miembros</p>
+                </div>
+              </div>
+              <span class="material-icons-round text-neutral-500 text-xl">more_vert</span>
+            </div>
+
+            <!-- Chat messages container (justify-end para que quede abajo) -->
+            <div id="chat-container" class="flex-1 px-4 overflow-hidden relative flex flex-col justify-end">
+              <!-- Phase 1: Bet creation -->
+              <div id="phase-1" class="chat-phase space-y-3 transition-all duration-500">
+                <!-- Message 1: Bet proposal -->
+                <div class="chat-msg chat-bubble chat-bubble-left" data-delay="0">
+                  <p class="text-xs text-neutral-500 mb-1">Mati</p>
+                  <p class="text-sm text-neutral-200">Luca a que el profe Marco se olvida de la prueba</p>
+                </div>
+
+                <!-- Message 2: Accept -->
+                <div class="chat-msg chat-bubble chat-bubble-right" data-delay="1500">
+                  <p class="text-sm">Jaja ya po, apostado</p>
+                </div>
+
+                <!-- System message: Bet created -->
+                <div class="chat-msg mx-auto text-center py-2" data-delay="3000">
+                  <div class="inline-flex items-center gap-2 rounded-full bg-primary/20 px-3 py-1.5">
+                    <span class="material-icons-round text-primary text-sm">lock</span>
+                    <span class="text-xs text-primary font-medium">$2.000 bloqueados</span>
+                  </div>
+                </div>
+
+                <!-- Bet card -->
+                <div class="chat-msg rounded-2xl bg-bg-elevated border border-neutral-800 p-3" data-delay="4500">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-medium text-accent">APUESTA ACTIVA</span>
+                    <span class="text-[10px] text-neutral-500">Mañana 10:00</span>
+                  </div>
+                  <p class="text-xs font-medium text-neutral-200 mb-2">Profe Marco olvida la prueba</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <div class="w-5 h-5 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-[8px] font-bold text-white">M</div>
+                      <span class="text-[10px] text-neutral-400">vs</span>
+                      <div class="w-5 h-5 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center text-[8px] font-bold text-white">T</div>
+                    </div>
+                    <span class="text-xs font-bold text-primary">$2.000</span>
+                  </div>
+                </div>
+
+                <!-- Someone typing indicator -->
+                <div class="chat-msg flex items-center gap-2" data-delay="6000">
+                  <div class="w-6 h-6 rounded-full bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-[8px] font-bold text-white">S</div>
+                  <div class="chat-bubble chat-bubble-left !max-w-fit !p-2 !px-3">
+                    <div class="flex gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" style="animation-duration: 0.6s"></span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" style="animation-duration: 0.6s; animation-delay: 0.15s"></span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" style="animation-duration: 0.6s; animation-delay: 0.3s"></span>
+                    </div>
+                  </div>
+                  <span class="text-[10px] text-neutral-500">Sofi está escribiendo...</span>
+                </div>
+              </div>
+
+              <!-- Time skip indicator -->
+              <div id="time-skip" class="chat-phase absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 pointer-events-none">
+                <div class="text-center">
+                  <div class="inline-flex items-center gap-2 rounded-full bg-neutral-800/80 px-4 py-2 mb-2">
+                    <span class="material-icons-round text-neutral-400 text-lg">schedule</span>
+                    <span class="text-sm text-neutral-400">Al día siguiente...</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Phase 2: Resolution -->
+              <div id="phase-2" class="chat-phase space-y-3 opacity-0 transition-all duration-500 absolute inset-x-4 bottom-0">
+                <!-- Message: Mati admits defeat -->
+                <div class="chat-msg chat-bubble chat-bubble-left" data-delay="0">
+                  <p class="text-xs text-neutral-500 mb-1">Mati</p>
+                  <p class="text-sm text-neutral-200">Ya estamos por salir, te dije asjasj</p>
+                </div>
+
+                <!-- Message: User response -->
+                <div class="chat-msg chat-bubble chat-bubble-right" data-delay="1500">
+                  <p class="text-sm">Ya pero ahora tenemos 2 pruebas pa la próxima semana :(</p>
+                </div>
+
+                <!-- System message: Win! -->
+                <div class="chat-msg mx-auto text-center py-2" data-delay="3000">
+                  <div class="inline-flex items-center gap-2 rounded-full bg-green-500/20 px-3 py-1.5 glow-win">
+                    <span class="material-icons-round text-green-500 text-sm">celebration</span>
+                    <span class="text-xs text-green-500 font-medium">¡Ganaste! +$2.000</span>
+                  </div>
+                </div>
+
+                <!-- Bet card resolved -->
+                <div class="chat-msg rounded-2xl bg-bg-elevated border border-green-500/30 p-3" data-delay="4500">
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="text-[10px] font-medium text-green-500">GANASTE</span>
+                    <span class="text-[10px] text-neutral-500">Hace 1 min</span>
+                  </div>
+                  <p class="text-xs font-medium text-neutral-200 mb-2">Profe Marco olvida la prueba</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                      <div class="w-5 h-5 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-[8px] font-bold text-white opacity-50">M</div>
+                      <span class="text-[10px] text-neutral-400">vs</span>
+                      <div class="w-5 h-5 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center text-[8px] font-bold text-white ring-2 ring-green-500">T</div>
+                    </div>
+                    <span class="text-xs font-bold text-green-500">+$2.000</span>
+                  </div>
+                </div>
+
+                <!-- Mati typing -->
+                <div class="chat-msg flex items-center gap-2" data-delay="6000">
+                  <div class="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-[8px] font-bold text-white">M</div>
+                  <div class="chat-bubble chat-bubble-left !max-w-fit !p-2 !px-3">
+                    <div class="flex gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" style="animation-duration: 0.6s"></span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" style="animation-duration: 0.6s; animation-delay: 0.15s"></span>
+                      <span class="w-1.5 h-1.5 rounded-full bg-neutral-400 animate-bounce" style="animation-duration: 0.6s; animation-delay: 0.3s"></span>
+                    </div>
+                  </div>
+                  <span class="text-[10px] text-neutral-500">Mati está escribiendo...</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chat input bar -->
+            <div class="p-3 border-t border-neutral-800">
+              <div class="flex items-center gap-2">
+                <div class="flex-1 bg-bg-surface rounded-full px-4 py-2 flex items-center">
+                  <span class="text-sm text-neutral-500">Escribe un mensaje...</span>
+                </div>
+                <button class="w-9 h-9 rounded-full bg-primary flex items-center justify-center">
+                  <span class="material-icons-round text-white text-lg">send</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating element: Win notification (static) - RIGHT SIDE -->
+        <div class="absolute -right-50 top-1/4 hidden lg:block animate-float" style="animation-delay: 0.5s">
+          <div class="glass rounded-2xl p-4 glow-primary">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                <span class="material-icons-round text-green-500">check_circle</span>
+              </div>
+              <div>
+                <p class="text-xs text-neutral-500">Ganaste</p>
+                <p class="text-lg font-bold text-green-500">+$5.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating element: Win popup (animated, triggered by chat) -->
+        <div id="win-popup" class="absolute top-1/2 left-1/2 hidden lg:block opacity-0 pointer-events-none">
+          <div class="glass rounded-2xl p-4 glow-win-popup">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                <span class="material-icons-round text-green-500">celebration</span>
+              </div>
+              <div>
+                <p class="text-xs text-neutral-500">Ganaste</p>
+                <p class="text-lg font-bold text-green-500">+$2.000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating element: Groups -->
+        <div class="absolute -left-8 bottom-1/3 hidden lg:block animate-float" style="animation-delay: 1s">
+          <div class="glass rounded-2xl p-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
+                <span class="material-icons-round text-accent">groups</span>
+              </div>
+              <div>
+                <p class="text-xs text-neutral-500">Tus grupos</p>
+                <p class="text-lg font-bold text-neutral-100">4</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .chat-phase {
+    will-change: opacity, transform;
+  }
+
+  /* Chat message popup animation */
+  .chat-msg {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+  }
+
+  .chat-msg.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .glow-win {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+    animation: pulse-glow-green 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow-green {
+    0%, 100% { box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(34, 197, 94, 0.5); }
+  }
+
+  /* Win popup animation */
+  .glow-win-popup {
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.4);
+  }
+
+  #win-popup {
+    transition: none;
+  }
+
+  #win-popup.animate {
+    animation: win-popup-path 3s ease-out forwards;
+  }
+
+  @keyframes win-popup-path {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.5);
+    }
+    15% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    25% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    40% {
+      transform: translate(-200px, -50%) scale(1);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-280px, -180px) scale(1);
+    }
+  }
+</style>
+
+<!-- Scripts -->
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Live counter
+    const countEl = document.getElementById('live-count');
+    if (countEl) {
+      let count = 2847;
+      setInterval(() => {
+        const change = Math.floor(Math.random() * 5) - 2;
+        count = Math.max(2500, Math.min(3200, count + change));
+        countEl.textContent = count.toLocaleString();
+      }, 3000);
+    }
+
+    // Chat animation
+    const phase1 = document.getElementById('phase-1');
+    const phase2 = document.getElementById('phase-2');
+    const timeSkip = document.getElementById('time-skip');
+
+    if (!phase1 || !phase2 || !timeSkip) return;
+
+    let currentPhase = 1;
+    const PHASE1_DURATION = 8000; // 8 seconds for phase 1
+    const PHASE2_DURATION = 6000; // 6 seconds for phase 2
+    const TRANSITION_DURATION = 1500; // 1.5 seconds for time skip
+
+    // Animate messages appearing one by one
+    function animateMessages(phaseEl) {
+      const messages = phaseEl.querySelectorAll('.chat-msg');
+      messages.forEach(msg => {
+        msg.classList.remove('visible');
+      });
+
+      messages.forEach(msg => {
+        const delay = parseInt(msg.dataset.delay) || 0;
+        setTimeout(() => {
+          msg.classList.add('visible');
+        }, delay);
+      });
+    }
+
+    function hideMessages(phaseEl) {
+      const messages = phaseEl.querySelectorAll('.chat-msg');
+      messages.forEach(msg => {
+        msg.classList.remove('visible');
+      });
+    }
+
+    function showPhase1() {
+      // Fade out phase 2
+      phase2.style.opacity = '0';
+      phase2.style.transform = 'translateY(-20px)';
+      hideMessages(phase2);
+
+      // Show phase 1
+      setTimeout(() => {
+        phase1.style.opacity = '1';
+        phase1.style.transform = 'translateY(0)';
+        animateMessages(phase1);
+      }, 300);
+    }
+
+    function showTimeSkip() {
+      // Fade out current phase
+      if (currentPhase === 1) {
+        phase1.style.opacity = '0';
+        phase1.style.transform = 'translateY(-20px)';
+      } else {
+        phase2.style.opacity = '0';
+        phase2.style.transform = 'translateY(-20px)';
+      }
+
+      // Show time skip
+      setTimeout(() => {
+        timeSkip.style.opacity = '1';
+      }, 300);
+
+      // Hide time skip after transition
+      setTimeout(() => {
+        timeSkip.style.opacity = '0';
+      }, TRANSITION_DURATION - 300);
+    }
+
+    function showPhase2() {
+      // Show phase 2
+      phase2.style.opacity = '1';
+      phase2.style.transform = 'translateY(0)';
+      animateMessages(phase2);
+
+      // Trigger win popup when "Ganaste" message appears (delay 3000ms)
+      const winPopup = document.getElementById('win-popup');
+      if (winPopup) {
+        setTimeout(() => {
+          winPopup.classList.add('animate');
+        }, 3000);
+      }
+    }
+
+    function runOnce() {
+      // Transition from phase 1 to phase 2 (only once)
+      showTimeSkip();
+      setTimeout(() => {
+        showPhase2();
+        // No more transitions - stays on phase 2
+      }, TRANSITION_DURATION);
+    }
+
+    // Initial animation for phase 1
+    animateMessages(phase1);
+
+    // After phase 1 duration, transition to phase 2 and stop
+    setTimeout(runOnce, PHASE1_DURATION);
+  });
+</script>

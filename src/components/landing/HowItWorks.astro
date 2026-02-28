@@ -1,0 +1,626 @@
+---
+// HowItWorks - Horizontal scroll section con GSAP ScrollTrigger
+---
+
+<section id="how-it-works" class="relative">
+  <!-- Contenedor que ocupa altura extra para el scroll -->
+  <div class="scroll-container h-[300vh]">
+    <!-- Sección sticky -->
+    <div class="sticky top-0 h-screen flex flex-col justify-center overflow-hidden py-4 relative">
+
+      <!-- Header -->
+      <div class="text-center mb-4 px-8">
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-neutral-50 mb-1">
+          ¿Cómo funciona?
+        </h2>
+        <p class="text-neutral-400 text-lg max-w-2xl mx-auto">
+          De la idea a la resolución en segundos
+        </p>
+      </div>
+
+      <!-- Track horizontal -->
+      <div class="horizontal-track flex gap-12 px-12 will-change-transform">
+
+        <!-- Step 1: Mis Grupos -->
+        <div class="step-panel flex-shrink-0 w-96">
+          <div class="phone-frame mx-auto w-[320px] h-[640px]">
+            <div class="phone-screen h-full flex flex-col">
+              <div class="phone-notch"></div>
+
+              <!-- Status bar -->
+              <div class="flex justify-between items-center px-6 pt-10 pb-2 text-[10px] text-neutral-400">
+                <span>12:30</span>
+                <div class="flex gap-1">
+                  <span class="material-icons-round text-[12px]">signal_cellular_alt</span>
+                  <span class="material-icons-round text-[12px]">battery_full</span>
+                </div>
+              </div>
+
+              <!-- Header -->
+              <div class="px-4 py-3">
+                <h4 class="font-heading text-lg font-semibold text-neutral-50">Mis Grupos</h4>
+              </div>
+
+              <!-- Groups list -->
+              <div class="flex-1 px-3 space-y-2 overflow-hidden">
+                <!-- Group 1 -->
+                <div class="glass rounded-xl p-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-xs font-bold">CU</div>
+                    <div class="flex-1 min-w-0">
+                      <p class="font-medium text-neutral-50 text-sm truncate">Cabros de la U</p>
+                      <p class="text-[11px] text-neutral-400">5 amigos</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between mt-2">
+                    <div class="flex -space-x-2">
+                      <div class="w-6 h-6 rounded-full bg-pink-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-cyan-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-amber-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-emerald-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-violet-500 border-2 border-bg-base"></div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                      <span class="text-primary text-xs font-semibold">+$12.500</span>
+                      <span class="text-sm text-accent">🔥 2 Activas</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Group 2 -->
+                <div class="glass rounded-xl p-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center text-white text-xs font-bold">LF</div>
+                    <div class="flex-1 min-w-0">
+                      <p class="font-medium text-neutral-50 text-sm truncate">Liga Fantasía</p>
+                      <p class="text-[11px] text-neutral-400">8 amigos</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center mt-2">
+                    <div class="flex -space-x-2">
+                      <div class="w-6 h-6 rounded-full bg-rose-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-sky-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-lime-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-orange-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-fuchsia-500 border-2 border-bg-base flex items-center justify-center text-[8px] text-white">+3</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Group 3 -->
+                <div class="glass rounded-xl p-3">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-white text-xs font-bold">MV</div>
+                    <div class="flex-1 min-w-0">
+                      <p class="font-medium text-neutral-50 text-sm truncate">Los malos pal valo</p>
+                      <p class="text-[11px] text-neutral-400">3 amigos</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between mt-2">
+                    <div class="flex -space-x-2">
+                      <div class="w-6 h-6 rounded-full bg-indigo-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-teal-500 border-2 border-bg-base"></div>
+                      <div class="w-6 h-6 rounded-full bg-yellow-500 border-2 border-bg-base"></div>
+                    </div>
+                    <div class="flex flex-col items-end">
+                      <span class="text-primary text-xs font-semibold">+$3.000</span>
+                      <span class="text-sm text-accent">🔥 1 Activa</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom button -->
+              <div class="p-4">
+                <button class="w-full py-3 bg-primary hover:bg-primary-dark rounded-xl font-semibold text-sm text-bg-base flex items-center justify-center gap-2">
+                  <span class="material-icons-round text-lg">add</span>
+                  Crear apuesta
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-bg-base font-bold text-sm mb-2">1</span>
+            <h3 class="font-heading text-lg font-semibold text-neutral-50 mb-1">Tus grupos</h3>
+            <p class="text-neutral-400 text-sm">Ve tus apuestas activas</p>
+          </div>
+        </div>
+
+        <!-- Step 2: Modal crear apuesta -->
+        <div class="step-panel flex-shrink-0 w-96">
+          <div class="phone-frame mx-auto w-[320px] h-[640px]">
+            <div class="phone-screen h-full flex flex-col relative">
+              <div class="phone-notch"></div>
+
+              <!-- Fondo: chat blurred -->
+              <div class="absolute inset-0 pt-8 px-3 blur-[2px] opacity-40">
+                <div class="mt-8 space-y-2">
+                  <div class="chat-bubble chat-bubble-left text-xs py-2 px-3">Ya po, apostemos algo</div>
+                  <div class="chat-bubble chat-bubble-right text-xs py-2 px-3">Dale, qué onda</div>
+                  <div class="chat-bubble chat-bubble-left text-xs py-2 px-3">El profe Marco...</div>
+                </div>
+              </div>
+
+              <!-- Overlay oscuro -->
+              <div class="absolute inset-0 bg-black/50"></div>
+
+              <!-- Modal Bottom Sheet -->
+              <div class="absolute bottom-0 left-0 right-0 bg-bg-elevated rounded-t-3xl p-4 z-10">
+                <!-- Handle -->
+                <div class="w-10 h-1 bg-neutral-600 rounded-full mx-auto mb-4"></div>
+
+                <!-- Header -->
+                <div class="flex items-center justify-between mb-4">
+                  <h4 class="font-heading text-base font-semibold text-neutral-50">Nueva apuesta</h4>
+                  <span class="text-[10px] text-neutral-400 bg-bg-surface px-2 py-1 rounded-full">Cabros de la U</span>
+                </div>
+
+                <!-- Input qué -->
+                <div class="mb-3">
+                  <label class="text-[11px] text-neutral-400 mb-1 block">¿Qué apostamos?</label>
+                  <div class="bg-bg-surface rounded-xl px-3 py-2 text-sm text-neutral-50">
+                    El profe Marco se olvida de la prueba
+                  </div>
+                </div>
+
+                <!-- Input cuánto -->
+                <div class="mb-3">
+                  <label class="text-[11px] text-neutral-400 mb-2 block">¿Cuánto cada uno?</label>
+                  <div class="flex gap-2">
+                    <button class="flex-1 py-2 bg-bg-surface rounded-lg text-xs text-neutral-300">$500</button>
+                    <button class="flex-1 py-2 bg-primary/20 border border-primary rounded-lg text-xs text-primary font-semibold">$1.000</button>
+                    <button class="flex-1 py-2 bg-bg-surface rounded-lg text-xs text-neutral-300">$2.000</button>
+                    <button class="flex-1 py-2 bg-bg-surface/50 border border-dashed border-neutral-600 rounded-lg text-xs text-neutral-400 italic">Otro...</button>
+                  </div>
+                </div>
+
+                <!-- Selector de personas -->
+                <div class="mb-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <label class="text-[11px] text-neutral-400">¿A quién retas?</label>
+                    <div class="flex bg-bg-surface rounded-full p-0.5 text-[9px]">
+                      <span class="px-2 py-0.5 rounded-full text-neutral-400">Todos</span>
+                      <span class="px-2 py-0.5 rounded-full bg-primary text-bg-base font-medium">Algunos</span>
+                    </div>
+                  </div>
+                  <div class="flex gap-2">
+                    <div class="flex flex-col items-center gap-1">
+                      <div class="w-10 h-10 rounded-full bg-pink-500 border-2 border-primary ring-2 ring-primary/30"></div>
+                      <span class="text-[9px] text-primary">Mati</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 opacity-50">
+                      <div class="w-10 h-10 rounded-full bg-cyan-500 border-2 border-transparent"></div>
+                      <span class="text-[9px] text-neutral-400">Sofi</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 opacity-50">
+                      <div class="w-10 h-10 rounded-full bg-amber-500 border-2 border-transparent"></div>
+                      <span class="text-[9px] text-neutral-400">Nico</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-1 opacity-50">
+                      <div class="w-10 h-10 rounded-full bg-emerald-500 border-2 border-transparent"></div>
+                      <span class="text-[9px] text-neutral-400">Cami</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Submit -->
+                <button class="w-full py-3 bg-accent hover:bg-accent-dark rounded-xl font-semibold text-sm text-bg-base flex items-center justify-center gap-2">
+                  <span class="material-icons-round text-lg">send</span>
+                  Enviar a Mati
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-bg-base font-bold text-sm mb-2">2</span>
+            <h3 class="font-heading text-lg font-semibold text-neutral-50 mb-1">Propón la apuesta</h3>
+            <p class="text-neutral-400 text-sm">Define qué y cuánto</p>
+          </div>
+        </div>
+
+        <!-- Step 3: Aceptar apuesta (vista de Mati) -->
+        <div class="step-panel flex-shrink-0 w-96">
+          <div class="phone-frame mx-auto w-[320px] h-[640px]">
+            <div class="phone-screen h-full flex flex-col">
+              <div class="phone-notch"></div>
+
+              <!-- Status bar -->
+              <div class="flex justify-between items-center px-6 pt-10 pb-2 text-[10px] text-neutral-400">
+                <span>12:35</span>
+                <div class="flex gap-1">
+                  <span class="material-icons-round text-[12px]">signal_cellular_alt</span>
+                  <span class="material-icons-round text-[12px]">battery_full</span>
+                </div>
+              </div>
+
+              <!-- Header chat -->
+              <div class="flex items-center gap-3 px-4 py-2 border-b border-neutral-800">
+                <span class="material-icons-round text-neutral-400 text-lg">arrow_back</span>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-[10px] font-bold">CU</div>
+                <div class="flex-1">
+                  <p class="font-medium text-neutral-50 text-sm">Cabros de la U</p>
+                  <p class="text-[10px] text-neutral-400">5 conectados</p>
+                </div>
+              </div>
+
+              <!-- Chat area (justify-end para que quede abajo) -->
+              <div class="flex-1 px-3 py-3 flex flex-col justify-end space-y-2 overflow-hidden">
+                <!-- Mensaje de Mati proponiendo -->
+                <div class="chat-bubble chat-bubble-left text-xs py-2 px-3">
+                  <p class="text-[10px] text-neutral-500 mb-1">Mati</p>
+                  Luca a que el profe Marco se olvida de la prueba
+                </div>
+
+                <!-- Card de apuesta -->
+                <div class="bg-gradient-to-br from-accent/20 to-accent/5 border border-accent/30 rounded-xl p-3 mx-auto max-w-[220px]">
+                  <div class="flex items-center gap-2 mb-2">
+                    <span class="material-icons-round text-accent text-base">local_fire_department</span>
+                    <span class="text-[10px] font-semibold text-accent uppercase tracking-wide">Nueva Apuesta</span>
+                  </div>
+                  <div class="flex items-center gap-2 mb-2">
+                    <div class="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600"></div>
+                    <span class="text-[11px] text-neutral-300"><span class="text-neutral-50 font-medium">@Mati</span> propone:</span>
+                  </div>
+                  <p class="text-sm text-neutral-50 mb-2">"El profe Marco se olvida de la prueba"</p>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs text-neutral-400">Monto:</span>
+                    <span class="text-sm font-semibold text-primary">$1.000 c/u</span>
+                  </div>
+                  <div class="flex gap-2">
+                    <button class="flex-1 py-2 bg-bg-surface rounded-lg text-xs text-neutral-400">Rechazar</button>
+                    <button class="flex-1 py-2 bg-primary rounded-lg text-xs text-bg-base font-semibold flex items-center justify-center gap-1">
+                      <span class="material-icons-round text-sm">check</span>
+                      Acepto
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Input bar -->
+              <div class="p-3 border-t border-neutral-800">
+                <div class="flex items-center gap-2 bg-bg-surface rounded-full px-4 py-2">
+                  <span class="text-xs text-neutral-500 flex-1">Mensaje...</span>
+                  <span class="material-icons-round text-neutral-500 text-lg">send</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-bg-base font-bold text-sm mb-2">3</span>
+            <h3 class="font-heading text-lg font-semibold text-neutral-50 mb-1">Acepta la apuesta</h3>
+            <p class="text-neutral-400 text-sm">Tu amigo decide si entra</p>
+          </div>
+        </div>
+
+        <!-- Step 4: Fondos bloqueados -->
+        <div class="step-panel flex-shrink-0 w-96">
+          <div class="phone-frame mx-auto w-[320px] h-[640px]">
+            <div class="phone-screen h-full flex flex-col relative">
+              <div class="phone-notch"></div>
+
+              <!-- Fondo blur del chat -->
+              <div class="absolute inset-0 pt-8 px-3 blur-[2px] opacity-30">
+                <div class="mt-12 space-y-2">
+                  <div class="chat-bubble chat-bubble-left text-xs py-2 px-3">Luca a que el profe...</div>
+                  <div class="chat-bubble chat-bubble-right text-xs py-2 px-3">Jaja ya po</div>
+                </div>
+              </div>
+
+              <!-- Overlay oscuro -->
+              <div class="absolute inset-0 bg-black/60"></div>
+
+              <!-- Modal flotante centrado -->
+              <div class="absolute inset-0 flex items-center justify-center z-10 p-4">
+                <div class="bg-bg-elevated rounded-3xl p-5 w-full max-w-[240px] border border-neutral-700 relative">
+                  <!-- Botón cerrar -->
+                  <button class="absolute top-3 left-3 w-7 h-7 rounded-full bg-bg-surface flex items-center justify-center">
+                    <span class="material-icons-round text-neutral-400 text-base">close</span>
+                  </button>
+
+                  <!-- Icono lock -->
+                  <div class="flex justify-center mb-4 mt-2">
+                    <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
+                      <span class="material-icons-round text-primary text-3xl">lock</span>
+                    </div>
+                  </div>
+
+                  <!-- Título -->
+                  <h4 class="text-center font-heading text-lg font-semibold text-neutral-50 mb-1">Fondos Bloqueados</h4>
+                  <p class="text-center text-2xl font-bold text-primary mb-4">$2.000</p>
+
+                  <!-- Participantes -->
+                  <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="flex flex-col items-center">
+                      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-xs font-bold text-white mb-1">M</div>
+                      <span class="text-[10px] text-neutral-400">Mati</span>
+                      <span class="text-xs font-semibold text-neutral-200">$1.000</span>
+                    </div>
+                    <span class="text-neutral-500 text-sm">vs</span>
+                    <div class="flex flex-col items-center">
+                      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center text-xs font-bold text-white mb-1">T</div>
+                      <span class="text-[10px] text-neutral-400">Tú</span>
+                      <span class="text-xs font-semibold text-neutral-200">$1.000</span>
+                    </div>
+                  </div>
+
+                  <!-- Estado -->
+                  <div class="bg-bg-surface rounded-xl p-3 mb-4">
+                    <div class="flex items-center justify-center">
+                      <span class="text-[11px] text-accent font-medium flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+                        Esperando resultado
+                      </span>
+                    </div>
+                  </div>
+
+                  <!-- Botón -->
+                  <button class="w-full py-2.5 bg-accent-dark hover:bg-accent rounded-xl text-sm text-white font-medium">
+                    Finalizar apuesta
+                  </button>
+
+                  <!-- Stellar logo -->
+                  <div class="flex justify-center mt-3">
+                    <img src="/stellar-logo-small.png" alt="Stellar" class="w-4 h-4 opacity-40 invert" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-bg-base font-bold text-sm mb-2">4</span>
+            <h3 class="font-heading text-lg font-semibold text-neutral-50 mb-1">Fondos bloqueados</h3>
+            <p class="text-neutral-400 text-sm">Escrow automático en Stellar</p>
+          </div>
+        </div>
+
+        <!-- Step 5: Resolución / Victoria -->
+        <div class="step-panel flex-shrink-0 w-96">
+          <div class="phone-frame mx-auto w-[320px] h-[640px]">
+            <div class="phone-screen h-full flex flex-col relative">
+              <div class="phone-notch"></div>
+
+              <!-- Fondo blur del chat -->
+              <div class="absolute inset-0 pt-8 px-3 blur-[2px] opacity-30">
+                <div class="mt-12 space-y-2">
+                  <div class="chat-bubble chat-bubble-left text-xs py-2 px-3">Ya estamos por salir</div>
+                  <div class="chat-bubble chat-bubble-right text-xs py-2 px-3">Te dije po jaja</div>
+                </div>
+              </div>
+
+              <!-- Overlay oscuro -->
+              <div class="absolute inset-0 bg-black/60"></div>
+
+              <!-- Modal flotante centrado -->
+              <div class="absolute inset-0 flex items-center justify-center z-10 p-4">
+                <div class="bg-bg-elevated rounded-3xl p-5 w-full max-w-[240px] border border-green-500/30 relative">
+                  <!-- Botón cerrar -->
+                  <button class="absolute top-3 left-3 w-7 h-7 rounded-full bg-bg-surface flex items-center justify-center">
+                    <span class="material-icons-round text-neutral-400 text-base">close</span>
+                  </button>
+
+                  <!-- Stellar logo en esquina -->
+                  <img src="/stellar-logo-small.png" alt="Stellar" class="absolute top-3 right-3 w-4 h-4 opacity-40 invert" />
+
+                  <!-- Icono victoria -->
+                  <div class="flex justify-center mb-4 mt-2">
+                    <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <span class="material-icons-round text-green-500 text-3xl">celebration</span>
+                    </div>
+                  </div>
+
+                  <!-- Título -->
+                  <h4 class="text-center font-heading text-xl font-bold text-green-500 mb-1">¡Ganaste!</h4>
+                  <p class="text-center text-3xl font-bold text-neutral-50 mb-4">+$2.000</p>
+
+                  <!-- Participantes -->
+                  <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="flex flex-col items-center opacity-50">
+                      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-xs font-bold text-white mb-1">M</div>
+                      <span class="text-[10px] text-neutral-400">Mati</span>
+                      <span class="text-xs text-neutral-500 line-through">$1.000</span>
+                    </div>
+                    <span class="text-neutral-500 text-sm">vs</span>
+                    <div class="flex flex-col items-center">
+                      <div class="w-10 h-10 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center text-xs font-bold text-white mb-1 ring-2 ring-green-500">T</div>
+                      <span class="text-[10px] text-green-400">Tú</span>
+                      <span class="text-xs font-semibold text-green-500">+$2.000</span>
+                    </div>
+                  </div>
+
+                  <!-- Descripción de la apuesta -->
+                  <div class="bg-bg-surface rounded-xl p-3 mb-4 text-center">
+                    <p class="text-[11px] text-neutral-400">"El profe Marco se olvida de la prueba"</p>
+                  </div>
+
+                  <!-- Botones -->
+                  <div class="flex gap-2">
+                    <button class="flex-1 py-2.5 bg-bg-surface hover:bg-neutral-700 rounded-xl text-sm text-neutral-300 font-medium flex items-center justify-center gap-1">
+                      <span class="material-icons-round text-sm">share</span>
+                      Compartir
+                    </button>
+                    <button class="flex-1 py-2.5 bg-green-600 hover:bg-green-500 rounded-xl text-sm text-white font-medium">
+                      Cerrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-bg-base font-bold text-sm mb-2">5</span>
+            <h3 class="font-heading text-lg font-semibold text-neutral-50 mb-1">Se resuelve</h3>
+            <p class="text-neutral-400 text-sm">Pago automático al ganador</p>
+          </div>
+        </div>
+
+        <!-- Step 6: Perfil -->
+        <div class="step-panel flex-shrink-0 w-96">
+          <div class="phone-frame mx-auto w-[320px] h-[640px]">
+            <div class="phone-screen h-full flex flex-col">
+              <div class="phone-notch"></div>
+
+              <!-- Status bar -->
+              <div class="flex justify-between items-center px-6 pt-10 pb-2 text-[10px] text-neutral-400">
+                <span>12:40</span>
+                <div class="flex gap-1">
+                  <span class="material-icons-round text-[12px]">signal_cellular_alt</span>
+                  <span class="material-icons-round text-[12px]">battery_full</span>
+                </div>
+              </div>
+
+              <!-- Profile header -->
+              <div class="px-4 py-3 flex items-center gap-3">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center text-white text-lg font-bold ring-2 ring-primary/50">T</div>
+                <div class="flex-1">
+                  <h4 class="font-heading text-base font-semibold text-neutral-50">@TuUsuario</h4>
+                  <p class="text-[11px] text-neutral-400">Desde Enero 2026</p>
+                </div>
+                <button class="w-8 h-8 rounded-full bg-bg-surface flex items-center justify-center">
+                  <span class="material-icons-round text-neutral-400 text-base">settings</span>
+                </button>
+              </div>
+
+              <!-- Stats grid -->
+              <div class="px-4 py-2">
+                <div class="grid grid-cols-3 gap-2">
+                  <div class="glass rounded-xl p-2 text-center">
+                    <p class="text-lg font-bold text-primary">23</p>
+                    <p class="text-[9px] text-neutral-400">Apuestas</p>
+                  </div>
+                  <div class="glass rounded-xl p-2 text-center">
+                    <p class="text-lg font-bold text-green-500">78%</p>
+                    <p class="text-[9px] text-neutral-400">Ganadas</p>
+                  </div>
+                  <div class="glass rounded-xl p-2 text-center">
+                    <p class="text-lg font-bold text-accent">+$45k</p>
+                    <p class="text-[9px] text-neutral-400">Balance</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Racha -->
+              <div class="px-4 py-2">
+                <div class="glass rounded-xl p-3 flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                    <span class="material-icons-round text-white text-lg">local_fire_department</span>
+                  </div>
+                  <div class="flex-1">
+                    <p class="text-sm font-semibold text-neutral-50">Racha de 5 victorias</p>
+                    <p class="text-[10px] text-neutral-400">Tu mejor racha: 8</p>
+                  </div>
+                  <span class="text-2xl">🔥</span>
+                </div>
+              </div>
+
+              <!-- Badges -->
+              <div class="px-4 py-2">
+                <p class="text-[11px] text-neutral-400 mb-2">Badges</p>
+                <div class="flex gap-2 flex-wrap">
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-amber-600/20 border border-yellow-500/30 flex items-center justify-center">
+                    <span class="text-xl">🏆</span>
+                  </div>
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-600/20 border border-blue-500/30 flex items-center justify-center">
+                    <span class="text-xl">💎</span>
+                  </div>
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-600/20 border border-purple-500/30 flex items-center justify-center">
+                    <span class="text-xl">⚡</span>
+                  </div>
+                  <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-600/20 border border-green-500/30 flex items-center justify-center">
+                    <span class="text-xl">🎯</span>
+                  </div>
+                  <div class="w-12 h-12 rounded-xl bg-bg-surface border border-dashed border-neutral-600 flex items-center justify-center opacity-50">
+                    <span class="material-icons-round text-neutral-500 text-base">lock</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Historial reciente -->
+              <div class="px-4 py-2 flex-1">
+                <p class="text-[11px] text-neutral-400 mb-2">Recientes</p>
+                <div class="space-y-1.5">
+                  <div class="flex items-center gap-2 text-[11px]">
+                    <span class="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <span class="material-icons-round text-green-500 text-[10px]">check</span>
+                    </span>
+                    <span class="text-neutral-300 flex-1 truncate">vs Mati - Profe Marco</span>
+                    <span class="text-green-500 font-semibold">+$2k</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-[11px]">
+                    <span class="w-5 h-5 rounded-full bg-green-500/20 flex items-center justify-center">
+                      <span class="material-icons-round text-green-500 text-[10px]">check</span>
+                    </span>
+                    <span class="text-neutral-300 flex-1 truncate">vs Grupo - Colo Colo</span>
+                    <span class="text-green-500 font-semibold">+$5k</span>
+                  </div>
+                  <div class="flex items-center gap-2 text-[11px]">
+                    <span class="w-5 h-5 rounded-full bg-red-500/20 flex items-center justify-center">
+                      <span class="material-icons-round text-red-500 text-[10px]">close</span>
+                    </span>
+                    <span class="text-neutral-300 flex-1 truncate">vs Sofi - Lluvia mañana</span>
+                    <span class="text-red-500 font-semibold">-$1k</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom nav hint -->
+              <div class="p-3 border-t border-neutral-800">
+                <div class="flex justify-around">
+                  <span class="material-icons-round text-neutral-500 text-lg">groups</span>
+                  <span class="material-icons-round text-neutral-500 text-lg">chat</span>
+                  <span class="material-icons-round text-primary text-lg">person</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary text-bg-base font-bold text-sm mb-2">6</span>
+            <h3 class="font-heading text-lg font-semibold text-neutral-50 mb-1">Tu perfil</h3>
+            <p class="text-neutral-400 text-sm">Badges y estadísticas</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Progress bar -->
+      <div class="absolute bottom-4 left-0 right-0 px-12 max-w-3xl mx-auto w-full">
+        <div class="h-1 bg-neutral-800 rounded-full overflow-hidden">
+          <div class="progress-bar h-full bg-gradient-to-r from-primary to-accent rounded-full w-0"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Esperar a que el DOM esté listo
+  const track = document.querySelector('.horizontal-track');
+  const progressBar = document.querySelector('.progress-bar');
+
+  if (track) {
+    const totalScroll = track.scrollWidth - window.innerWidth + 100;
+    console.log('GSAP loaded, total scroll:', totalScroll);
+
+    gsap.to(track, {
+      x: -totalScroll,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.scroll-container',
+        start: 'top top-=400',
+        end: 'bottom bottom+=400',
+        scrub: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          if (progressBar) {
+            progressBar.style.width = (self.progress * 100) + '%';
+          }
+        }
+      }
+    });
+  }
+</script>
